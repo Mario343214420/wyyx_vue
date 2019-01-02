@@ -16,10 +16,22 @@
         <div class="hdScorllX">
           <div class="hdScorllItem" ref="hdScorllItem">
             <span :class="{active:index === activeIndex }" v-for="(item,index) in data" :key="index" ref="hdScorll"
-                  @click="active(index)">{{item.name}}</span>
+                  @click="active(index)">{{item.name}}
+            </span>
+
           </div>
+
         </div>
         <span :class="[isArrowUp?'arrow arrowUp':'arrow']" @click="toggle"/>
+        <div class="pullList" v-show="isArrowUp">
+          <h2 class="pullList-Header">全部频道</h2>
+          <div class="pullList-Item" ref="hdScorllItem">
+            <span :class="{active:index === activeIndex }" v-for="(item,index) in data" :key="index" ref="hdScorll"
+                  @click="active(index)">{{item.name}}
+            </span>
+          </div>
+        </div>
+
       </div>
       <div class="swiper-container" v-if="banner.length>0">
         <div class="swiper-wrapper">
@@ -27,9 +39,8 @@
             <img v-lazy="item.picUrl"/>
           </div>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination"/>
       </div>
-
 
 
       <div class="g-grow">
@@ -194,7 +205,7 @@
         })
       },
       toggle(){
-        this.isArrowUp=!this.isArrowUp;
+        this.isArrowUp = !this.isArrowUp;
       }
     },
     watch: {
@@ -238,6 +249,7 @@
   .homeContainer {
     background: #F4F4F4;
     overflow: hidden;
+
     .headerWrap {
       background: #fff;
       overflow: hidden;
@@ -310,13 +322,14 @@
         justify-content: space-between;
         align-items: center;
         span {
-          width: 70px;
+
           text-align: center;
           flex-shrink: 0;
           flex-wrap: nowrap;
           margin: 0 17px;
           font-size: .37333*75/@rem;
           padding-bottom: 17px;
+          white-space: nowrap;
           &.active {
             padding: 0 0 12px 0;
             border-bottom: 5px solid #b4282d;
@@ -325,21 +338,69 @@
         }
       }
     }
-    .arrow{
-      height: 75/@rem;
-      width: 15%;
-      float: right;
-      text-align: center;
-      background: #fff url(../../common/img/home_img/arrow-down.png) no-repeat center;
-      transition: all 2s;
 
+    .pullList{
+      margin-top: -1.2rem;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      background: #ffffff;
+      display: flex;
+      padding: 20px 0 0px 0;
 
+      width: 100%;
+      position: relative;
+      font-size: .37rem;
+      .pullList-Header{
+        position: absolute;
+        top: 0.7rem;
+        left: 0.3rem;
+        height: 1.2rem;
 
+      }
+      .pullList-Item {
+        margin-top: 1.2rem;
+        border-bottom: 1px solid #000;
+        span{
+          display: block;
+          float: left;
+          color: #b4282d;
+          width: 2rem;
+          height: .75rem;
+          margin-bottom: .53333rem;
+          margin-left: .4rem;
+          border-radius: 8px;
+          border: 1px solid #b4282d;
+          font-size: .35rem;
+          text-align: center;
+          line-height: .75rem;
+
+        }
+
+      }
     }
-    .arrowUp{
-      transform: rotate(180deg);
-      transform-origin:50% 50%;
-    }
+
+.arrow {
+  display:block;
+  z-index: 10;
+  height: 75/@rem;
+  width: 60/@rem;
+  position: absolute;
+  right: 25px;
+  text-align: center;
+  background: #fff url(../../common/img/home_img/arrow-down.png) no-repeat center;
+  transition: all .5s;
+
+}
+
+
+
+.arrowUp {
+  transform: rotate(-180deg);
+  transform-origin: 50% 50%;
+}
+
+
 
     .swiper-container {
       margin-top: 152px;
@@ -387,15 +448,15 @@
         }
       }
     }
-    .m-item{
-      width:100%;
+    .m-item {
+      width: 100%;
       height: 340px;
       background-color: pink;
-      a{
+      a {
         display: block;
         float: left;
         background: yellowgreen;
-        img{
+        img {
 
         }
       }
