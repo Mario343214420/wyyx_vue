@@ -364,16 +364,21 @@
         span{
           display: block;
           float: left;
-          color: #b4282d;
+          color: #000;
           width: 2rem;
           height: .75rem;
           margin-bottom: .53333rem;
           margin-left: .4rem;
           border-radius: 8px;
-          border: 1px solid #b4282d;
+          border: 1px solid #000;
           font-size: .35rem;
           text-align: center;
           line-height: .75rem;
+          &.active {
+
+            border: 1px solid #b4282d;
+            color: #b4282d;
+          }
 
         }
 
@@ -387,6 +392,7 @@
   width: 60/@rem;
   position: absolute;
   right: 25px;
+
   text-align: center;
   background: #fff url(../../common/img/home_img/arrow-down.png) no-repeat center;
   transition: all .5s;
