@@ -5,7 +5,9 @@ import {
   Home,
   Detail,
   Nav,
-  LoginWay
+  LoginWay,
+  REQ_KINGKONGMODULE
+
 } from './mutation-types'
 export default {
   [Data](state,{data}) {
@@ -29,4 +31,8 @@ export default {
   [LoginWay](state,loginWay) {
     state.loginWay = loginWay
   },
+  [REQ_KINGKONGMODULE] (state,{kingKongModule}) {
+    state.kingKongModule = kingKongModule;
+  },
+
 }

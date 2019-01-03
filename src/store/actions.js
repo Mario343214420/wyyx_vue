@@ -4,7 +4,9 @@ import {
   reqBanner,
   reqHome,
   reqDetail,
-  reqNav
+  reqNav,
+  reqkingKongModule,
+
 } from '../api'
 import {
   Data,
@@ -12,38 +14,46 @@ import {
   Home,
   Detail,
   Nav,
-  LoginWay
+  LoginWay,
+  REQ_KINGKONGMODULE,
 } from './mutation-types'
 export default {
   //获取首页data信息
   async getData({commit},cb){
     const result = await reqData()
     commit(Data,{data:result.data})
-    cb && cb()
+    typeof cb ==='function' && cb()
   },
   //获取首页banner信息
   async getBanner({commit},cb){
     const result = await reqBanner()
     commit(Banner,{banner:result.focusList})
-    cb && cb()
+    typeof cb ==='function' && cb()
   },
   //获取home信息
   async getHome({commit},cb){
     const result = await reqHome()
     commit(Home,{result})
-    cb && cb()
+    typeof cb ==='function' && cb()
   },
   //获取detail页面
   async getDetail({commit},cb){
     const result = await reqDetail()
     commit(Detail,{result})
-    cb && cb()
+    typeof cb ==='function' && cb()
   },
   //获取nav
   async getNav({commit},cb){
     const result = await reqNav()
     commit(Nav,{result})
-    cb && cb()
+    typeof cb ==='function' && cb()
+  },
+  async reqkingKongModule ({commit},cb) {
+    const kingKongModule = await reqkingKongModule();
+    if (kingKongModule.code === 0) {
+      commit(REQ_KINGKONGMODULE, {kingKongModule: kingKongModule.kingKongModule})
+      typeof cb === 'function' && cb()
+    }
   },
   //设置loginWay
   setLoginWay({commit},loginWay){

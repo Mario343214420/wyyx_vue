@@ -26,7 +26,7 @@
         <div class="pullList" v-show="isArrowUp">
           <h2 class="pullList-Header">全部频道</h2>
           <div class="pullList-Item" ref="hdScorllItem">
-            <span :class="{active:index === activeIndex }" v-for="(item,index) in data" :key="index" ref="hdScorll"
+            <span :class="{active:index === activeIndex}" v-for="(item,index) in data" :key="index" ref="hdScorll"
                   @click="active(index)">{{item.name}}
             </span>
           </div>
@@ -151,14 +151,10 @@
       return {
         isSelected: false,
         activeIndex: 0,
-        isMasklayer: false,
         isArrowUp: false,
       }
     },
     mounted(){
-      /*      setTimeout(() => {
-       this.isMasklayer = true
-       },300)*/
 
       if (!this.data.length || this.banner.length) {
         Indicator.open({
@@ -201,6 +197,7 @@
         })
         new BScroll('.imgWrap', {
           click: true,
+
           scrollX: true
         })
       },
@@ -306,7 +303,6 @@
           border: 1px solid #b4282d;
           padding: 4px 12px;
         }
-
       }
     }
     .hdScorllX {
@@ -322,7 +318,6 @@
         justify-content: space-between;
         align-items: center;
         span {
-
           text-align: center;
           flex-shrink: 0;
           flex-wrap: nowrap;
@@ -399,17 +394,14 @@
 
 }
 
-
-
 .arrowUp {
   transform: rotate(-180deg);
   transform-origin: 50% 50%;
 }
 
-
-
     .swiper-container {
       margin-top: 152px;
+      height: 400/@rem;
       .swiper-wrapper {
         .swiper-slide {
           img {

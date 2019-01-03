@@ -1,53 +1,26 @@
 <template>
   <div class="goodsItem">
     <ul class="imgItem">
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
+      <li v-for="(kingKon,index) in kingKongModule.kingKongList" :key="index">
+        <img :src="kingKon.picUrl" alt="">
+        <span>{{kingKon.text}}</span>
       </li>
 
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
-      <li>
-        <img src="./images/1.png" alt="">
-        <span>美食</span>
-      </li>
     </ul>
   </div>
 </template>
 
 <script>
-  export default {}
+  import {mapState} from 'vuex'
+  export default {
+    computed: {
+      ...mapState(['kingKongModule'])
+    },
+    mounted(){
+      this.$store.dispatch('reqkingKongModule');
+    }
+
+  }
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>

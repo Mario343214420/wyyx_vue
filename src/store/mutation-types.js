@@ -5,4 +5,4 @@ export const Home = 'home' // 接收data信息
 export const Detail = 'detail' // 接收detail信息
 export const Nav = 'nav' // 接收detail信息\
 export const LoginWay = 'loginway' // 接收detail信息
-
+export const REQ_KINGKONGMODULE = 'req_kingKongModule'

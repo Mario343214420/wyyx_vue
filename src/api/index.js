@@ -11,6 +11,11 @@ export const reqDetail = () => ajax('/detail')
 //获取home对象
 export const reqNav = () => ajax('/nav')
 
+export const reqkingKongModule =()=>ajax('/kingKongModule')
+
+export const reqDetailTuiJian = () => ajax('/detailtuijian')
+
+
 
 // 获取图片验证码
 export const reqCaptcha = () => ajax('/api/captcha')

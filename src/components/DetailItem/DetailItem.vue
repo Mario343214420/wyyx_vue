@@ -8,7 +8,7 @@
               <img src="" alt="">
             </span>
             <span class="userName">
-{{detail.recommendOne.topicId}}
+{{detail.recommendOne.nickname}}
             </span>
           </div>
           <div class="contentTitle"></div>
@@ -126,7 +126,8 @@
           color: #333;
           border: 1px solid #d9d9d9;
           border-radius: .10667*75/@rem;
-          overflow: hidden;
+          overflow:
+            hidden;
           .imgContainer {
             background-image: url(//yanxuan.nosdn.127.net/09d83c97c9963495e6518cfbec776b4c.jpg?imageView&quality=75);
             background-size: cover;
