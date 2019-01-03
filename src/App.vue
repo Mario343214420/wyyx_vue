@@ -3,7 +3,7 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>
-    <FooterGuide v-if="$route.meta.isInterlayer"></FooterGuide>
+    <FooterGuide></FooterGuide>
   </div>
 </template>
 

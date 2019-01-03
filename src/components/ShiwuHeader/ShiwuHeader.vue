@@ -4,7 +4,12 @@
       <div class="bd">
         <div class="row">
           <i class="shouye" @click="$router.replace('/home')"></i>
-          <i class="logo"></i>
+          <i class="logo" v-if="$route.path==='/Personal'"></i>
+          <span v-if="$route.path!=='/Personal'">
+            <h5>发现</h5>
+            <h6>甄选佳</h6>
+          </span>
+
           <div class="right">
             <div class="search" @click="$router.replace('/home')">
               <i class="search1"></i>
@@ -20,8 +25,10 @@
 </template>
 
 <script>
+
   export default {
-    name: "ShiwuHeader"
+    name: "ShiwuHeader",
+
   }
 </script>
 
@@ -76,6 +83,29 @@
           background-repeat: no-repeat;
           background-size: 2.29333*75/@rem 5.30667*75/@rem;
           font-style: normal;
+        }
+        span{
+          position: relative;
+          top: 0;
+          left: 50%;
+          transform: translate(-100%,0);
+          h5{
+            line-height: 50/@rem;
+            float: left;
+            font-size: .6rem;
+            color: #b4282d;
+            font-weight: 700;
+            margin-right: 10px;
+
+          }
+          h6{
+            line-height: 50/@rem;
+            float: right;
+            font-size: .40rem;
+            color: #7F7F7F;
+            padding-left: 10px;
+
+          }
         }
         .right{
           width: 20%;

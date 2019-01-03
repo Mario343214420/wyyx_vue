@@ -5,12 +5,13 @@ const Home = () => import('../pages/Home/Home.vue')
 const List = () => import('../pages/List/List.vue')
 const Personal = () => import('../pages/Personal/Personal.vue')
 const Shopcart = () => import('../pages/Shopcart/Shopcart.vue')
-/*import Detail from '../pages/Detail/Detail.vue'
-import Home from '../pages/Home/Home.vue'
-import List from '../pages/List/List.vue'
-import Personal from '../pages/Personal/Personal.vue'
-import Shopcart from '../pages/Shopcart/Shopcart.vue'*/
-import Interlayer from '../pages/Interlayer/Interlayer.vue'
+const Recommend = () => import('../pages/Detail/Recommend/Recommend.vue')
+const Master = () => import('../pages/Detail/Master/Master.vue')
+const UpNew = () => import('../pages/Detail/UpNew/UpNew.vue')
+const Show = () => import('../pages/Detail/Show/Show.vue')
+const D_home = () => import('../pages/Detail/D_home/D_home.vue')
+
+
 import Login from '../pages/Login/Login.vue'
 Vue.use(Router)
 export default new Router({
@@ -18,55 +19,62 @@ export default new Router({
     {
       path: '/login',
       component: Login,
-      meta:{
-        isInterlayer: false
-      }
+
     },
-    {
-      path: '/interlayer',
-      component: Interlayer,
-      meta:{
-        isInterlayer: false
-      }
-    },
+
     {
       path: '/detail',
       component: Detail,
-      meta:{
-        isInterlayer: true
-      }
+      children:[
+        {
+          path:'/detail/recommend',
+          component: Recommend,
+        },
+        {
+          path:'/detail/master',
+          component: Master,
+        },
+        {
+          path:'/detail/upNew',
+          component: UpNew,
+        },
+        {
+          path:'/detail/show',
+          component: Show,
+        },
+        {
+          path:'/detail/d_home',
+          component: D_home,
+        },
+        {
+          path: '/detail',
+          redirect: '/detail/recommend'
+        }
+      ]
+
     },
     {
       path: '/home',
       component: Home,
-      meta:{
-        isInterlayer: true
-      }
+
     },
     {
       path: '/list',
       component: List,
-      meta:{
-        isInterlayer: true
-      }
     },
+
     {
       path: '/personal',
       component: Personal,
-      meta:{
-        isInterlayer: true
-      }
+
     },
     {
       path: '/shopcart',
       component: Shopcart,
-      meta:{
-        isInterlayer: true
-      }
     },
     {
       path: '/',
-      redirect: '/Interlayer'
+      redirect: '/home'
     }
   ]
 })

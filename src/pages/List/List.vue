@@ -10,7 +10,9 @@
       <div class="m-cateNavVertWrap">
         <div class="j-cateNavWrap">
           <div class="j-cateNav">
-            <div  class="item" v-for="(item1,index1) in nav.categoryL1List" :key="index1" @click="getIndex(index1)" :class="{active:index === index1 }">{{item1.name}}</div>
+            <div class="item" v-for="(item1,index1) in nav.categoryL1List" :key="index1" @click="getIndex(index1)"
+                 :class="{active:index === index1 }">{{item1.name}}
+            </div>
           </div>
         </div>
       </div>
@@ -27,20 +29,20 @@
     data(){
       return {
         index: 3
-    }
+      }
     },
-    computed:{
+    computed: {
       ...mapState(['nav'])
     },
     mounted () {
       this.$store.dispatch('getNav')
     },
-    methods:{
+    methods: {
       getIndex(index1){
         this.index = index1
       }
     },
-    components:{
+    components: {
       ListItem
     }
   }
@@ -48,14 +50,15 @@
 
 <style scoped lang="less" rel="stylesheet/less">
   @import '../../common/stylus/mixins';
-    .wrap{
-      background: #F4F4F4;
-      padding-bottom: 90/@rem;
-    .m-itemCateListHd{
+
+  .wrap {
+    background: #F4F4F4;
+    padding-bottom: 90/@rem;
+    .m-itemCateListHd {
       border-bottom: 1px solid #999;
       display: flex;
       height: 88px;
-      position: fixed!important;
+      position: fixed !important;
       left: 0;
       top: 0;
       z-index: 5;
@@ -63,7 +66,7 @@
       align-items: center;
       padding: 0 .4*75/@rem;
       background-color: #fff;
-      .m-topSearchIpt{
+      .m-topSearchIpt {
         padding: .16*75/@rem .26667*75/@rem .16*75/@rem .2*75/@rem;
         overflow: hidden;
         position: relative;
@@ -75,7 +78,7 @@
         font-size: .37333*75/@rem;
         background-color: #ededed;
         border-radius: .10667*75/@rem;
-        .icon{
+        .icon {
           display: inline-block;
           vertical-align: middle;
           background-image: url(//yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/search2-2fb94833aa.png);
@@ -85,13 +88,13 @@
           height: .37333*75/@rem;
           margin-right: .13333*75/@rem;
         }
-        .placeholder{
+        .placeholder {
           color: #666;
           font-size: .37333*75/@rem;
         }
       }
     }
-    .m-cateNavVertWrap{
+    .m-cateNavVertWrap {
       border-right: 1px solid #999;
       position: fixed;
       top: 1.17333*75/@rem;
@@ -100,19 +103,19 @@
       z-index: 4;
       width: 2.16*75/@rem;
       background-color: #fff;
-      .j-cateNavWrap{
+      .j-cateNavWrap {
         position: relative;
         height: 100%;
         width: 100%;
         overflow: hidden;
-        .j-cateNav{
+        .j-cateNav {
           height: 91%;
           padding-bottom: 1.84*75/@rem;
           display: flex;
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          .item{
+          .item {
             width: 100%;
             height: .66667*75/@rem;
             text-align: center;
@@ -124,7 +127,7 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
-            &.active{
+            &.active {
               font-size: .48*75/@rem;
               color: #ab2b2b;
               line-height: .66667rem;

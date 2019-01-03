@@ -1,6 +1,6 @@
 <template>
   <div id="scrollWrap">
-    <Masklayer/>
+
     <div class="homeContainer">
       <div class="headerWrap">
         <div class="homeHd">
@@ -54,7 +54,7 @@
         <div class="hd">
           <div class="hd-Wrap">
             <span>新人专享礼</span>
-            <i class="iconfont icon-yuanjiantou1"></i>
+
           </div>
         </div>
         <div class="hd-itemWrap">
@@ -112,7 +112,7 @@
         <div class="hd">
           <div class="hd-Wrap">
             <span>专题精选</span>
-            <i class="iconfont icon-yuanjiantou1"></i>
+
           </div>
         </div>
       </div>
@@ -143,7 +143,7 @@
   import GoodThing from '../../components/GoodThing/GoodThing'
   import HomeFooter from '../../components/HomeFooter/HomeFooter'
   import {Indicator} from 'mint-ui';
-  import Masklayer from '../../components/Masklayer/Masklayer'
+
   import GoodsItem from '../../components/GoodsItem/GoodsItem.vue'
   export default {
     name: "Home",
@@ -232,7 +232,7 @@
       goTop,
       GoodThing,
       HomeFooter,
-      Masklayer,
+
       GoodsItem
     }
   }

@@ -25,6 +25,7 @@
   </div>
 </template>
 <script>
+
   import Vue from 'vue'
   import ShiwuHeader from '../../components/ShiwuHeader/ShiwuHeader'
   import {mapState} from 'vuex'
@@ -32,9 +33,11 @@
     name: "Personal",
     data(){
       return{
-        loginWay: null
+        loginWay: null,
+
       }
     },
+
     mounted (){
 
     },
