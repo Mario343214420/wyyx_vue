@@ -10,7 +10,7 @@
               <div class="avatar">
                 <img :src="detail.yxLook.avatar" alt="">
               </div>
-              <div class="nickname" v-for="(item,index) in data" :key="index">{{detail.yxLook.nickname}}</div>
+              <div class="nickname">{{detail.yxLook.nickname}}</div>
             </div>
           </div>
         </div>

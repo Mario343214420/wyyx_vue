@@ -37,7 +37,7 @@
   import Swiper from 'swiper'
   import {mapState} from 'vuex'
   import ShiwuHeader from '../../components/ShiwuHeader/ShiwuHeader.vue'
-  //  import ShiwuGuide from '../../components/ShiwuGuide/ShiwuGuide.vue'
+
 
 
 

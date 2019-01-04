@@ -11,7 +11,7 @@
               <span>搜索商品, 共9771款好物</span>
             </div>
           </div>
-          <span class="login"><a href="">登录</a></span>
+          <span class="login"><a href="#/login">登录</a></span>
         </div>
         <div class="hdScorllX">
           <div class="hdScorllItem" ref="hdScorllItem">
@@ -242,6 +242,7 @@
     width: 100%;
     overflow: hidden;
   }
+
 
   .homeContainer {
     background: #F4F4F4;
